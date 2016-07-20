@@ -1,7 +1,16 @@
 import React, {Component} from 'react';
 import News from './News';
 
+
+
+
 export default class App extends Component {
+
+
+
+
+
+
 
 
   componentDidMount(){
@@ -94,6 +103,9 @@ export default class App extends Component {
     return (
       <div>
 
+
+
+
         {/*[if lt IE 8]>
          <p class="browserupgrade">Вы используете устаревший браузер. Пожалуйста, обновите <a href="http://browsehappy.com/">браузер</a>,
          чтобы улучшить свои возможности.</p>
@@ -147,7 +159,7 @@ export default class App extends Component {
                         <i>Войти</i>
                       </a>
                     </span>
-                    <span><a href="#sign-up"><i>Регистрация</i></a></span>
+                    <span><a href="http://46.101.144.160/registration"><i>Регистрация</i></a></span>
                   </span>
                   </div>
                 </div>

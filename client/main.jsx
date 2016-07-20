@@ -20,15 +20,18 @@ Meteor.startup(function() {
 
   ReactDOM.render((
 
-     
-              <Router history={browserHistory}>
-                  <Route path="/" component={App}>
-                    
-                   </Route>
 
-              </Router>
 
-         
+      <Router history={browserHistory}>
+          <Route path="/" component={App}>
+
+          </Route>
+
+      </Router>
+
+
+
+
 
   ), root);
 });

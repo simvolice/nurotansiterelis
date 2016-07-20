@@ -7,7 +7,7 @@ import React, {Component, PropTypes} from 'react';
 import {createContainer} from 'meteor/react-meteor-data';
 import {NewsRecords} from '../../api/news/NewsRecords.js';
 import {Meteor} from 'meteor/meteor';
-import './owl.carousel.min.js';
+import '../js/owl.carousel.min.js';
 
 
 Meteor.subscribe('news_records');
@@ -104,7 +104,7 @@ export default class News extends Component {
             <h3><i>Общественная Приемная</i></h3>
         <span>партии “Нұр Отан”</span>
         <ul>
-        <li><a href="#"><img src="img/icons/edit.png" alt="edit" /> Подать обращение</a></li>
+        <li><a href="http://46.101.144.160/addcomplaint"><img src="img/icons/edit.png" alt="edit" /> Подать обращение</a></li>
         <li><a href="#"><img src="img/icons/persons.png" alt="persons" /> Записаться на прием</a></li>
         <li><a href="#"><img src="img/icons/question.png" alt="question" /> Задать вопрос</a></li>
         </ul>
