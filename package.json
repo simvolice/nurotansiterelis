@@ -2,7 +2,8 @@
   "name": "boilerplate",
   "private": true,
   "scripts": {
-    "start": "meteor"
+    "start": "MONGO_URL=mongodb://127.0.0.1:3001/nurotanAdmin meteor",
+    "meteor": "MONGO_URL=mongodb://127.0.0.1:3001/nurotanAdmin meteor"
   },
   "dependencies": {
     "lodash": "^4.13.1",
