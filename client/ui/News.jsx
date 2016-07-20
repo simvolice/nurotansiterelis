@@ -7,6 +7,7 @@ import React, {Component, PropTypes} from 'react';
 import {createContainer} from 'meteor/react-meteor-data';
 import {NewsRecords} from '../../api/news/NewsRecords.js';
 import {Meteor} from 'meteor/meteor';
+import './owl.carousel.min.js';
 
 
 Meteor.subscribe('news_records');
@@ -44,8 +45,8 @@ export default class News extends Component {
             )
         )
     }
-    
-    
+
+
     render(){
         return(
 
@@ -85,7 +86,7 @@ export default class News extends Component {
             </div>
             </div>
 
-                
+
                 {this.render_news()}
 
 
@@ -163,22 +164,22 @@ export default class News extends Component {
         </div>
         </div>
         </div>
-            
-            
-            
-            
-            
-            
-            
-            
+
+
+
+
+
+
+
+
         )
-        
-        
+
+
     }
-    
-    
-    
-    
+
+
+
+
 }
 
 News.propTypes = {
