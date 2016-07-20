@@ -2,8 +2,8 @@
   "name": "boilerplate",
   "private": true,
   "scripts": {
-    "start": "MONGO_URL=mongodb://127.0.0.1:3001/nurotanAdmin meteor",
-    "meteor": "MONGO_URL=mongodb://127.0.0.1:3001/nurotanAdmin meteor"
+    "start": "MONGO_URL=mongodb://172.17.0.2:27017/nurotanAdmin meteor",
+    "meteor": "MONGO_URL=mongodb://172.17.0.2:27017/nurotanAdmin meteor"
   },
   "dependencies": {
     "lodash": "^4.13.1",
@@ -14,7 +14,7 @@
     "react-addons-pure-render-mixin": "^15.2.1",
     "react-dom": "^15.2.1",
     "react-intl": "^2.1.3",
-    "react-router": "^2.5.2",
+    "react-router": "^2.6.0",
     "react-select": "^1.0.0-beta13",
     "react-tap-event-plugin": "^1.0.0",
     "react-tinymce": "^0.5.1"

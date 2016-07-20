@@ -13,7 +13,7 @@ const {Router, Route, IndexRoute, browserHistory} = ReactRouter;
 Meteor.startup(function() {
 
    
-   
+  console.log(Meteor.settings);
   const root = document.createElement('div');
   root.setAttribute('id', 'root');
   document.body.appendChild(root);
