@@ -4,6 +4,7 @@ import App from './ui/App.jsx';
 import React from 'react';
 import ReactRouter from 'react-router';
 import ReactDOM from 'react-dom';
+import { TAPi18n } from 'meteor/tap:i18n';
 
 const {Router, Route, IndexRoute, browserHistory} = ReactRouter;
 
@@ -12,8 +13,18 @@ const {Router, Route, IndexRoute, browserHistory} = ReactRouter;
 
 Meteor.startup(function() {
 
+
+
+    TAPi18n.setLanguage('ru')
+        .done(function () {
+            console.log('demo');
+        })
+        .fail(function (error_message) {
+            // Handle the situation
+            console.log(error_message);
+        });
+
    
-  console.log(Meteor.settings);
   const root = document.createElement('div');
   root.setAttribute('id', 'root');
   document.body.appendChild(root);
@@ -31,7 +42,7 @@ Meteor.startup(function() {
 
 
 
-
+    
 
   ), root);
 });

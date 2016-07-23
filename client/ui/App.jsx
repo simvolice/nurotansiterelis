@@ -1,15 +1,41 @@
 import React, {Component} from 'react';
 import News from './News';
+import { TAPi18n } from 'meteor/tap:i18n';
+import I18n from 'meteor/timoruetten:react-i18n';
 
-
+import classNames from 'classnames';
 
 
 export default class App extends Component {
 
+  constructor(props){
+    super(props);
 
 
 
 
+  }
+
+
+
+
+
+
+  setLang(i){
+
+    TAPi18n.setLanguage(i)
+        .done(function () {
+          classNames({'activeClassRU': false});
+
+         classNames({'activeClassKZ': true});
+
+        })
+        .fail(function (error_message) {
+          // Handle the situation
+          console.log(error_message);
+        });
+
+  }
 
 
 
@@ -100,6 +126,20 @@ export default class App extends Component {
   }
 
   render() {
+    
+    
+    var activeClassRU = classNames({'active': true});
+
+    var activeClassKZ = classNames({'active': false});
+
+    var activeClassENG = classNames({'active': false});
+
+
+
+    
+
+    
+
     return (
       <div>
 
@@ -130,9 +170,9 @@ export default class App extends Component {
                     <strong><i>11 июля, 2016</i></strong>
                   </span>
                   <span className="language">
-                    <i>KZ</i>
-                    <i className="active">RU</i>
-                    <i>EN</i>
+                    <i className={activeClassKZ} onClick={this.setLang.bind(this, 'kz')}>KZ</i>
+                    <i className={activeClassRU}>RU</i>
+                    <i className={activeClassENG}>EN</i>
                   </span>
                   <span className="tel">
                     <img src="img/icons/tel.png" alt="telephone" />
@@ -156,7 +196,7 @@ export default class App extends Component {
                     <span>
                       <a href="#sign">
                         <img src="img/icons/login.png" alt="Войти" />
-                        <i>Войти</i>
+                        <i><I18n i18nkey="welcome"/></i>
                       </a>
                     </span>
                     <span><a href="http://46.101.144.160/registration"><i>Регистрация</i></a></span>
