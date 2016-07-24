@@ -15,14 +15,7 @@ Meteor.startup(function() {
 
 
 
-    TAPi18n.setLanguage('ru')
-        .done(function () {
-            console.log('demo');
-        })
-        .fail(function (error_message) {
-            // Handle the situation
-            console.log(error_message);
-        });
+    TAPi18n.setLanguage('ru');
 
    
   const root = document.createElement('div');

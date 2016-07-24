@@ -5,6 +5,12 @@ import I18n from 'meteor/timoruetten:react-i18n';
 
 import classNames from 'classnames';
 
+import 'moment/locale/ru';
+import 'moment/locale/kk';
+
+import moment from 'moment';
+
+moment.locale('ru');
 
 export default class App extends Component {
 
@@ -12,7 +18,16 @@ export default class App extends Component {
     super(props);
 
 
+    this.state = {
 
+      datenow: moment().format('LL')
+
+
+  }
+
+
+
+    this.setLang = this.setLang.bind(this);
 
   }
 
@@ -23,23 +38,31 @@ export default class App extends Component {
 
   setLang(i){
 
-    TAPi18n.setLanguage(i)
-        .done(function () {
-          classNames({'activeClassRU': false});
+    TAPi18n.setLanguage(i);
 
-         classNames({'activeClassKZ': true});
+    if (i === 'kz'){
 
-        })
-        .fail(function (error_message) {
-          // Handle the situation
-          console.log(error_message);
-        });
+      moment.locale('kk');
+      this.setState({datenow: moment().format('LL')});
+
+
+    }else {
+
+      moment.locale(i);
+      this.setState({datenow: moment().format('LL')});
+
+
+    }
+
 
   }
 
 
 
   componentDidMount(){
+
+    
+
     $(".burger").on('click', function(){
       $('.small-menu').toggle();
       console.log("ok");
@@ -126,17 +149,8 @@ export default class App extends Component {
   }
 
   render() {
-    
-    
-    var activeClassRU = classNames({'active': true});
-
-    var activeClassKZ = classNames({'active': false});
-
-    var activeClassENG = classNames({'active': false});
 
 
-
-    
 
     
 
@@ -167,12 +181,12 @@ export default class App extends Component {
                 <div className="left-on-menu">
                   <div className="block-top-right">
                   <span className="date">
-                    <strong><i>11 июля, 2016</i></strong>
+                    <strong><i>{this.state.datenow}</i></strong>
                   </span>
                   <span className="language">
-                    <i className={activeClassKZ} onClick={this.setLang.bind(this, 'kz')}>KZ</i>
-                    <i className={activeClassRU}>RU</i>
-                    <i className={activeClassENG}>EN</i>
+                    <i onClick={this.setLang.bind(this, 'kz')}>KZ</i>
+                    <i onClick={this.setLang.bind(this, 'ru')}>RU</i>
+                    <i onClick={this.setLang.bind(this, 'en')}>EN</i>
                   </span>
                   <span className="tel">
                     <img src="img/icons/tel.png" alt="telephone" />
@@ -184,7 +198,7 @@ export default class App extends Component {
                 </div>
                 <div className="right-on-menu">
                   <div className="block-top-right right">
-                    <input type="text" placeholder="Я ищу..." className="search" />
+                    <input type="text" placeholder={TAPi18n.__('searchPlaceHolder')} className="search" />
                   <span className="social">
                     <a href="#twitter" className="twitter" />
                     <a href="#facebook" className="facebook" />
@@ -196,55 +210,55 @@ export default class App extends Component {
                     <span>
                       <a href="#sign">
                         <img src="img/icons/login.png" alt="Войти" />
-                        <i><I18n i18nkey="welcome"/></i>
+                        <i><I18n i18nkey="enter"/></i>
                       </a>
                     </span>
-                    <span><a href="http://46.101.144.160/registration"><i>Регистрация</i></a></span>
+                    <span><a href="http://46.101.144.160/registration"><i><I18n i18nkey="registration"/></i></a></span>
                   </span>
                   </div>
                 </div>
               </div>
               <div className="menu cell-10">
                 <ul className="big-menu">
-                  <li><a href="#" className="active">Главная</a></li>
-                  <li><a href="#">Партия</a></li>
-                  <li><a href="#">Фракция</a></li>
-                  <li><a href="#">Новости</a></li>
-                  <li><a href="#">Программные документы</a></li>
-                  <li><a href="#">Регионы</a></li>
-                  <li><a href="#" className="red">Общественная приемная</a></li>
-                  <li className="last"><a href="#"><span>Еще</span> <img src="img/icons/burger.png" alt="burger" /></a></li>
+                  <li><a href="#" className="active"><I18n i18nkey="main"/></a></li>
+                  <li><a href="#"><I18n i18nkey="consignment"/></a></li>
+                  <li><a href="#"><I18n i18nkey="faction"/></a></li>
+                  <li><a href="#"><I18n i18nkey="news"/></a></li>
+                  <li><a href="#"><I18n i18nkey="PolicyDocuments"/></a></li>
+                  <li><a href="#"><I18n i18nkey="Regions"/></a></li>
+                  <li><a href="#" className="red"><I18n i18nkey="PublicReception"/></a></li>
+                  <li className="last"><a href="#"><span><I18n i18nkey="yet"/></span> <img src="img/icons/burger.png" alt="burger" /></a></li>
                   <li className="burger"><a href="#"><img src="img/icons/burger.png" alt="burger" /></a></li>
                 </ul>
                 <ul className="small-menu">
-                  <li><a href="#" className="active">Главная</a></li>
-                  <li><a href="#">Партия</a></li>
-                  <li><a href="#">Фракция</a></li>
-                  <li><a href="#">Новости</a></li>
-                  <li><a href="#">Программные документы</a></li>
-                  <li><a href="#">Регионы</a></li>
-                  <li><a href="#" className="red">Общественная приемная</a></li>
+                  <li><a href="#" className="active"><I18n i18nkey="main"/></a></li>
+                  <li><a href="#"><I18n i18nkey="consignment"/></a></li>
+                  <li><a href="#"><I18n i18nkey="faction"/></a></li>
+                  <li><a href="#"><I18n i18nkey="news"/></a></li>
+                  <li><a href="#"><I18n i18nkey="PolicyDocuments"/></a></li>
+                  <li><a href="#"><I18n i18nkey="Regions"/></a></li>
+                  <li><a href="#" className="red"><I18n i18nkey="PublicReception"/></a></li>
                 </ul>
               </div>
             </header>
             <div className="cell-6 cell-medium-12 last">
               <div className="large-block">
-                <span className="category"><i>Политика</i></span>
+                <span className="category"><i><I18n i18nkey="politics"/></i></span>
                 <img src="img/top-block/conference.jpg" alt="конференция" />
                 <div className="topic">
-                  <h2>XVI съезд партии «Нур Отан» под председательством Главы государства</h2>
-                  <span className="date"><i>6 июля, 2016</i></span>
+                  <h2><I18n i18nkey="firstPolitics"/></h2>
+                  <span className="date"><i>{this.state.datenow}</i></span>
                 </div>
               </div>
             </div>
             <div className="cell-6 cell-medium-12 last">
               <div className="cell-6">
                 <div className="medium-block">
-                  <span className="category"><i>Политика</i></span>
+                  <span className="category"><i><I18n i18nkey="politics"/></i></span>
                   <img src="img/top-block/floar.jpg" alt="конференция" />
                   <div className="topic">
-                    <h2>Автопробег в Костанайской области</h2>
-                    <span className="date"><i>6 июля, 2016</i></span>
+                    <h2><I18n i18nkey="secondPolitics"/></h2>
+                    <span className="date"><i>{this.state.datenow}</i></span>
                   </div>
                 </div>
               </div>
@@ -255,10 +269,10 @@ export default class App extends Component {
               </div>
               <div className="cell-6">
                 <div className="medium-block-2">
-                  <span className="category"><i>Спорт</i></span>
+                  <span className="category"><i><I18n i18nkey="sport"/></i></span>
                   <img src="img/top-block/politic.jpg" alt="политика" />
                   <div className="topic">
-                    <h2>В честь празднования Дня столицы жителям Павлодара подарили....</h2>
+                    <h2><I18n i18nkey="firstSport"/></h2>
                     <span className="date"><i>6 июля, 2016</i></span>
                   </div>
                 </div>
@@ -275,9 +289,9 @@ export default class App extends Component {
           <div className="content-center">
             <div id="green-block">
               <div id="review">
-                <h2 className="opinion"><i>Мнения</i></h2>
+                <h2 className="opinion"><i><I18n i18nkey="opinions"/></i></h2>
                 <div className="yellow-block">
-                  <p>Все мнения</p>
+                  <p><I18n i18nkey="AllOpinions"/></p>
                   <img src="img/icons/quick.png" alt="комментари" className="quick" />
                   <a href="#shred"><img src="img/icons/shared-black.png" alt="поделиться" className="shared-black" /></a>
                 </div>
@@ -315,8 +329,8 @@ export default class App extends Component {
               <div id="slider-center">
                 <div className="tabs">
                   <ul>
-                    <li>Проекты</li>
-                    <li>ДИАЛОГОВЫЕ ПЛОЩАДКИ</li>
+                    <li><I18n i18nkey="PROJECTS"/></li>
+                    <li><I18n i18nkey="dialoguePlatforms"/></li>
                   </ul>
                   <div>
                     <div className="slider-green">
@@ -350,13 +364,13 @@ export default class App extends Component {
             </div>
           </div>
           <div id="videos">
-            <h2><i>Видео</i></h2>
+            <h2><i><I18n i18nkey="video"/></i></h2>
             <div className="columns-video">
               <div className="video item">
                 <iframe src="https://www.youtube.com/embed/l8hJittOaCQ" allowFullScreen />
-                <p>Коротко о Плане нации - 100 конкретных шагов</p>
+                <p><I18n i18nkey="steps"/></p>
               <span className="date">
-                <strong><i>11 июля, 2016</i></strong>
+                <strong><i>{this.state.datenow}</i></strong>
               </span>
               <span className="answer">
                 <strong><i>12</i></strong>
@@ -364,9 +378,9 @@ export default class App extends Component {
               </div>
               <div className="video item">
                 <iframe src="https://www.youtube.com/embed/l8hJittOaCQ" allowFullScreen />
-                <p>Коротко о Плане нации - 100 конкретных шагов</p>
+                <p><I18n i18nkey="steps"/></p>
               <span className="date">
-                <strong><i>11 июля, 2016</i></strong>
+                <strong><i>{this.state.datenow}</i></strong>
               </span>
               <span className="answer">
                 <strong><i>12</i></strong>
@@ -374,9 +388,9 @@ export default class App extends Component {
               </div>
               <div className="video item">
                 <iframe src="https://www.youtube.com/embed/l8hJittOaCQ" allowFullScreen />
-                <p>Коротко о Плане нации - 100 конкретных шагов</p>
+                <p><I18n i18nkey="steps"/></p>
               <span className="date">
-                <strong><i>11 июля, 2016</i></strong>
+                <strong><i>{this.state.datenow}</i></strong>
               </span>
               <span className="answer">
                 <strong><i>12</i></strong>
@@ -384,9 +398,9 @@ export default class App extends Component {
               </div>
               <div className="video item">
                 <iframe src="https://www.youtube.com/embed/l8hJittOaCQ" allowFullScreen />
-                <p>Коротко о Плане нации - 100 конкретных шагов</p>
+                <p><I18n i18nkey="steps"/></p>
               <span className="date">
-                <strong><i>11 июля, 2016</i></strong>
+                <strong><i>{this.state.datenow}</i></strong>
               </span>
               <span className="answer">
                 <strong><i>12</i></strong>
@@ -394,9 +408,9 @@ export default class App extends Component {
               </div>
               <div className="video item">
                 <iframe src="https://www.youtube.com/embed/l8hJittOaCQ" allowFullScreen />
-                <p>Коротко о Плане нации - 100 конкретных шагов</p>
+                <p><I18n i18nkey="steps"/></p>
               <span className="date">
-                <strong><i>11 июля, 2016</i></strong>
+                <strong><i>{this.state.datenow}</i></strong>
               </span>
               <span className="answer">
                 <strong><i>12</i></strong>
@@ -404,9 +418,9 @@ export default class App extends Component {
               </div>
               <div className="video item">
                 <iframe src="https://www.youtube.com/embed/l8hJittOaCQ" allowFullScreen />
-                <p>Коротко о Плане нации - 100 конкретных шагов</p>
+                <p><I18n i18nkey="steps"/></p>
               <span className="date">
-                <strong><i>11 июля, 2016</i></strong>
+                <strong><i>{this.state.datenow}</i></strong>
               </span>
               <span className="answer">
                 <strong><i>12</i></strong>
@@ -414,9 +428,9 @@ export default class App extends Component {
               </div>
               <div className="video item">
                 <iframe src="https://www.youtube.com/embed/l8hJittOaCQ" allowFullScreen />
-                <p>Коротко о Плане нации - 100 конкретных шагов</p>
+                <p><I18n i18nkey="steps"/></p>
               <span className="date">
-                <strong><i>11 июля, 2016</i></strong>
+                <strong><i>{this.state.datenow}</i></strong>
               </span>
               <span className="answer">
                 <strong><i>12</i></strong>
@@ -424,9 +438,9 @@ export default class App extends Component {
               </div>
               <div className="video item">
                 <iframe src="https://www.youtube.com/embed/l8hJittOaCQ" allowFullScreen />
-                <p>Коротко о Плане нации - 100 конкретных шагов</p>
+                <p><I18n i18nkey="steps"/></p>
               <span className="date">
-                <strong><i>11 июля, 2016</i></strong>
+                <strong><i>{this.state.datenow}</i></strong>
               </span>
               <span className="answer">
                 <strong><i>12</i></strong>
@@ -435,14 +449,13 @@ export default class App extends Component {
             </div>
           </div>
           <div id="blocks-bottom" className="content">
-            <h2><i>Фото</i></h2>
+            <h2><i><I18n i18nkey="photo"/></i></h2>
             <div className="black-block">
               <div className="cell-6 cell-medium-12 last">
                 <div className="large-block">
                   <img src="img/bottom-block/politic.jpg" alt="политик" />
                   <div className="topic">
-                    <h2>Церемония награждения лучших спортсменов по национальным видам спорта «Алтын Тұғыр -
-                      2015»</h2>
+                    <h2><I18n i18nkey="firstPhoto"/></h2>
                     <a href>
                       <img src="img/icons/instagram.png" alt="instagram" className="right" />
                     </a>
@@ -457,7 +470,7 @@ export default class App extends Component {
                     </div>
                     <img src="img/bottom-block/politic-2.jpg" alt="политик" />
                     <div className="topic">
-                      <h2>Внеочередной Съезд партии “Нұр Отан”</h2>
+                      <h2><I18n i18nkey="secondPhoto"/></h2>
                     </div>
                   </div>
                 </div>
@@ -468,7 +481,7 @@ export default class App extends Component {
                     </div>
                     <img src="img/bottom-block/politic-3.jpg" alt="политик" />
                     <div className="topic">
-                      <h2>Казахстанцы - Герои Советского Союза</h2>
+                      <h2><I18n i18nkey="fourthPhoto"/></h2>
                     </div>
                   </div>
                 </div>
@@ -479,7 +492,7 @@ export default class App extends Component {
                     </div>
                     <img src="img/bottom-block/politic-4.jpg" alt="политик" />
                     <div className="topic">
-                      <h2>“Большая Евразия: Территория диалога молодежи”</h2>
+                      <h2><I18n i18nkey="thirdPhoto"/></h2>
                     </div>
                   </div>
                 </div>
@@ -490,7 +503,7 @@ export default class App extends Component {
                     </div>
                     <img src="img/bottom-block/politic-5.jpg" alt="политик" />
                     <div className="topic">
-                      <h2>Республиканский конкурс "Лучшая первичная партийная организация"</h2>
+                      <h2><I18n i18nkey="fifthPhoto"/></h2>
                     </div>
                   </div>
                 </div>
@@ -501,43 +514,43 @@ export default class App extends Component {
           <div className="slider-bottom">
             <div className="item">
               <a href="#">www.akorda.kz</a>
-              <span>Официальный сайт Президента РК</span>
+              <span><I18n i18nkey="ofSiteRK"/></span>
             </div>
             <div className="item">
               <a href="#">www.ipp.kz</a>
-              <span>Официальный сайт Президента РК</span>
+              <span><I18n i18nkey="ofSiteRK"/></span>
             </div>
             <div className="item">
               <a href="#">www.nurmedia.kz</a>
-              <span>Официальный сайт Президента РК</span>
+              <span><I18n i18nkey="ofSiteRK"/></span>
             </div>
             <div className="item">
               <a href="#">www.zhasotan.kz</a>
-              <span>Официальный сайт Президента РК</span>
+              <span><I18n i18nkey="ofSiteRK"/></span>
             </div>
             <div className="item">
               <a href="#">www.zhasotan.kz</a>
-              <span>Официальный сайт Президента РК</span>
+              <span><I18n i18nkey="ofSiteRK"/></span>
             </div>
             <div className="item">
               <a href="#">www.akorda.kz</a>
-              <span>Официальный сайт Президента РК</span>
+              <span><I18n i18nkey="ofSiteRK"/></span>
             </div>
             <div className="item">
               <a href="#">www.akorda.kz</a>
-              <span>Официальный сайт Президента РК</span>
+              <span><I18n i18nkey="ofSiteRK"/></span>
             </div>
           </div>
           <div className="clearfix" />
           <div className="menu-bottom">
             <ul>
-              <li><a href="#" className="active">Главная</a></li>
-              <li><a href="#">Партия</a></li>
-              <li><a href="#">Фракция</a></li>
-              <li><a href="#">Новости</a></li>
-              <li><a href="#">Программные документы</a></li>
-              <li><a href="#">Регионы</a></li>
-              <li><a href="#">Общественная приемная</a></li>
+              <li><a href="#" className="active"><I18n i18nkey="main"/></a></li>
+              <li><a href="#"><I18n i18nkey="consignment"/></a></li>
+              <li><a href="#"><I18n i18nkey="faction"/></a></li>
+              <li><a href="#"><I18n i18nkey="news"/></a></li>
+              <li><a href="#"><I18n i18nkey="PolicyDocuments"/></a></li>
+              <li><a href="#"><I18n i18nkey="Regions"/></a></li>
+              <li><a href="#"><I18n i18nkey="PublicReception"/></a></li>
             </ul>
           </div>
           <footer>
@@ -555,7 +568,7 @@ export default class App extends Component {
             </span>
             </div>
             <div className="copright">
-              <span>© 2016  Партия “Нұр Отан”. Все права защищены.</span>
+              <span><I18n i18nkey="copyright"/></span>
             </div>
           </footer>
           {/*Content END*/}

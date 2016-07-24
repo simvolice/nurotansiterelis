@@ -1,5 +1,57 @@
 {
 
-    "welcome": "I like"
+    "searchPlaceHolder": "Я ищу...",
+    "enter": "Enter",
+    "registration": "Registration",
+    "main": "Main",
+    "consignment": "The consignment",
+    "faction": "Faction",
+    "news": "News",
+    "PolicyDocuments": "Policy documents",
+    "Regions": "Regions",
+    "PublicReception": "Public reception",
+    "yet": "Yet",
+    "politics": "Politics",
+    "sport": "Sport",
+    "firstPolitics": "XVI Congress of \"Nur Otan\" party, chaired by the Head of State",
+
+    "secondPolitics": "The rally in Kostanay region",
+    "firstSport": "In honor of the Capital Day celebration Pavlodar residents presented ...",
+    "AllNews": "All news",
+    "regionalNews": "Regional news",
+    "PressReleases": "Press releases",
+    "announcements": "Announcements",
+    "Interview": "Interview",
+    "calendar": "The calendar",
+    "firstNews": "The delegation of Kazakhstan spoke at the session of the OSCE PA",
+    "electronic": "Electronic",
+    "publicReception": "Public Reception",
+    "PartyNurOtan": "Party \"Nur Otan\"",
+    "PostTreatment": "Post - treatment",
+    "MakeAnAppointment": "Make an appointment",
+    "AskAQuestion": "Ask a question",
+
+    "COMMENTS": "COMMENTS",
+    "opinions": "Opinions",
+    "AllOpinions": "All opinions",
+    "PROJECTS": "PROJECTS",
+    "dialoguePlatforms": "DIALOGUE PLATFORMS",
+    "video": "VIDEO",
+    "photo": "PHOTO",
+    "steps": "ABOUT THE PLAN OF THE NATION - 100 concrete steps",
+    "firstPhoto": "The awarding ceremony of the best athletes on the national sports \"Altyn Tұғyr - 2015\"",
+    "secondPhoto": "An extraordinary congress of the party \"Nur Otan\"",
+    "thirdPhoto": "\"Most of the Eurasia: Area Youth Dialogue\"",
+    "fourthPhoto": "Kazakhstanis - Heroes of the Soviet Union",
+    "fifthPhoto": "Republican contest \"The best the primary party organization\"",
+    "ofSiteRK": "The official website of the President of the Republic of Kazakhstan",
+    "copyright": "© 2016 Party \"Nur Otan\". All rights reserved."
+
+
+
+
+
+
+
 
 }
