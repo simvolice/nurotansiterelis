@@ -1,4 +1,5 @@
 @import url(./css/normalize.css);
 @import url(./css/main.css);
 @import url(./css/style.css);
-@import url(owl-carousel/owl.carousel.css);
+@import url(./css/owl.carousel.css);
+@import url(./css/responsive.min.css);
