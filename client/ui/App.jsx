@@ -241,7 +241,7 @@ export default class App extends Component {
                 </ul>
               </div>
             </header>
-            
+            <div className="clearfix"></div>
             
            
 
@@ -253,7 +253,7 @@ export default class App extends Component {
             {this.props.children}
 
 
-
+            <div className="clearfix"></div>
             <div className="menu-bottom">
               <ul>
                 <li><a href="#" className="active"><I18n i18nkey="main"/></a></li>

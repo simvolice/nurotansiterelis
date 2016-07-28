@@ -4,6 +4,7 @@
   "scripts": {},
   "dependencies": {
     "classnames": "^2.2.5",
+    "lodash": "^4.14.0",
     "meteor-node-stubs": "~0.2.0",
     "moment": "^2.14.1",
     "react": "^15.2.1",

@@ -11,6 +11,8 @@ import {Meteor} from 'meteor/meteor';
 import '../js/owl.carousel.min.js';
 import '../js/responsive.min.js';
 import I18n from 'meteor/timoruetten:react-i18n';
+import lodash from 'lodash';
+
 
 Meteor.subscribe('news_records');
 
@@ -33,9 +35,15 @@ export default class News extends Component {
 
 
 
+        lodash.reverse(this.props.news_records);
+
+
+       const newArr = lodash.dropRight(this.props.news_records, this.props.news_records.length - 4);
+
+
 
         return(
-            this.props.news_records.map((news , i) => (
+            newArr.map((news , i) => (
 
 
                 <div className="news-block" key={i}>
