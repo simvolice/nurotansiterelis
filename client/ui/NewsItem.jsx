@@ -2,7 +2,7 @@ import React, {Component, PropTypes} from 'react';
 import {createContainer} from 'meteor/react-meteor-data';
 import {NewsRecords} from '../../api/news/NewsRecords.js';
 import {Meteor} from 'meteor/meteor';
-
+import ReactDisqusThread from 'react-disqus-thread';
 
 export default class NewsItem extends Component {
 
@@ -109,6 +109,15 @@ export default class NewsItem extends Component {
                                         <a href="#twitter" className="twitter" />
                                     </div>
                                 </div>
+
+
+                                <ReactDisqusThread
+                                    shortname="nurotansite"
+                                    identifier={news_records._id}
+                                    title={news_records.title}
+                                    url="http://nurotan.kz"/>
+
+
                             </div>
                             <div id="blog" className="cell-4">
                                 <h2 className="see-also">Смотрите также</h2>
