@@ -8,10 +8,14 @@ import {createContainer} from 'meteor/react-meteor-data';
 import {Link, IndexLink} from 'react-router';
 import {NewsRecords} from '../../api/news/NewsRecords.js';
 import {Meteor} from 'meteor/meteor';
-import '../js/owl.carousel.min.js';
+
 import '../js/responsive.min.js';
+
 import I18n from 'meteor/timoruetten:react-i18n';
 import lodash from 'lodash';
+import SliderBottom from './SliderBottom';
+import SliderVideo from './SliderVideo';
+import SliderCenter from './SliderCenter';
 
 
 Meteor.subscribe('news_records');
@@ -31,6 +35,59 @@ export default class News extends Component {
 
 
     }
+
+
+
+    componentDidMount(){
+
+
+
+        $(".burger").on('click', function(){
+            $('.small-menu').toggle();
+            console.log("ok");
+        });
+
+
+        
+
+
+
+
+
+        jQuery.fn.lightTabs = function(options){
+
+            var createTabs = function(){
+                tabs = this;
+                i = 0;
+
+                showPage = function(i){
+                    $(tabs).children("div").children("div").hide();
+                    $(tabs).children("div").children("div").eq(i).show();
+                    $(tabs).children("ul").children("li").removeClass("active");
+                    $(tabs).children("ul").children("li").eq(i).addClass("active");
+                };
+
+                showPage(0);
+
+                $(tabs).children("ul").children("li").each(function(index, element){
+                    $(element).attr("data-page", i);
+                    i++;
+                });
+
+                $(tabs).children("ul").children("li").click(function(){
+                    showPage(parseInt($(this).attr("data-page")));
+                });
+            };
+            return this.each(createTabs);
+        };
+
+        $(".tabs").lightTabs();
+        $(".tabs-2").lightTabs();
+    }
+   
+
+
+
     render_news(){
 
 
@@ -50,7 +107,7 @@ export default class News extends Component {
                     <div className="line">
                         <img src={news.urlImage} alt="новость" className="img-news" />
                         <div className="topic">
-                            <Link to={`/${news._id}`}><h2>{news.title}</h2></Link>
+                            <Link to={`/news/${news._id}`}><h2>{news.title}</h2></Link>
 
                             <p>{news.truncateText}</p>
                             <span className="date"><i>{news.createdAt}</i></span>
@@ -72,98 +129,96 @@ export default class News extends Component {
         return(
 
 
-
             <div>
 
-
-                <div>
-                    <div className="cell-6 cell-medium-12 last">
-                        <div className="large-block">
-                            <span className="category"><i>Политика</i></span>
-                            <img src="img/top-block/conference.jpg" alt="конференция" />
-                            <div className="topic">
-                                <h2>XVI съезд партии «Нур Отан» под председательством Главы государства</h2>
-                                <span className="date"><i>6 июля, 2016</i></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="cell-6 cell-medium-12 last">
-                        <div className="cell-6">
-                            <div className="medium-block">
-                                <span className="category"><i>Политика</i></span>
-                                <img src="img/top-block/floar.jpg" alt="конференция" />
+                {/* Main*/}
+                <div id="main">
+                    {/* Top news */}
+                    <div id="top-news" className="center">
+                        <div className="cell-6 cell-medium-12 last">
+                            <div className="large-block">
+                                <span className="category"><i><I18n i18nkey="politics"/></i></span>
+                                <img src="img/top-block/conference.jpg" alt="конференция" />
                                 <div className="topic">
-                                    <h2>Автопробег в Костанайской области</h2>
+                                    <h2><I18n i18nkey="firstPolitics"/></h2>
                                     <span className="date"><i>6 июля, 2016</i></span>
                                 </div>
                             </div>
                         </div>
-                        <div className="cell-6">
-                            <div className="medium-block">
-                                <img src="img/top-block/partia-2.jpg" alt="партия" />
+                        <div className="cell-6 cell-medium-12 last">
+                            <div className="cell-6">
+                                <div className="medium-block">
+                                    <span className="category"><i>Политика</i></span>
+                                    <img src="img/top-block/floar.jpg" alt="конференция" />
+                                    <div className="topic">
+                                        <h2><I18n i18nkey="secondPolitics"/></h2>
+                                        <span className="date"><i>6 июля, 2016</i></span>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div className="cell-6">
-                            <div className="medium-block-2">
-                                <span className="category"><i>Спорт</i></span>
-                                <img src="img/top-block/politic.jpg" alt="политика" />
-                                <div className="topic">
-                                    <h2>В честь празднования Дня столицы жителям Павлодара подарили....</h2>
-                                    <span className="date"><i>6 июля, 2016</i></span>
+                            <div className="cell-6">
+                                <div className="medium-block">
+                                    <img src="img/top-block/partia-2.jpg" alt="партия" />
+                                </div>
+                            </div>
+                            <div className="cell-6">
+                                <div className="medium-block-2">
+                                    <span className="category"><i><I18n i18nkey="sport"/></i></span>
+                                    <img src="img/top-block/politic.jpg" alt="политика" />
+                                    <div className="topic">
+                                        <h2><I18n i18nkey="firstSport"/></h2>
+                                        <span className="date"><i>6 июля, 2016</i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="cell-6">
+                                <div className="medium-block-2">
+                                    <img src="img/top-block/partia.jpg" alt="партия" />
                                 </div>
                             </div>
                         </div>
-                        <div className="cell-6">
-                            <div className="medium-block-2">
-                                <img src="img/top-block/partia.jpg" alt="партия" />
-                            </div>
-                        </div>
                     </div>
-                    <div id="news">
+                    {/*End top news*/}
+                    {/* News */}
+                    <div id="news" className="center">
+                        <div className="clearfix" />
                         <div id="blocks-news" className="cell-8">
                             <div className="theme">
-                                <h2><i>Новости</i></h2>
+                                <h2><i><I18n i18nkey="news"/></i></h2>
                                 <ul>
-                                    <li><a href="#">Все новости</a></li>
-                                    <li><a href="#">Новости регионов</a></li>
-                                    <li><a href="#">Пресс-релизы</a></li>
-                                    <li><a href="#">Анонсы</a></li>
-                                    <li><a href="#">Опрос</a></li>
-                                    <li><a href="#" className="active">Календарь <span className="calendar active" /></a></li>
+                                    <li><a href="#"><I18n i18nkey="AllNews"/></a></li>
+                                    <li><a href="#"><I18n i18nkey="regionalNews"/></a></li>
+                                    <li><a href="#"><I18n i18nkey="PressReleases"/></a></li>
+                                    <li><a href="#"><I18n i18nkey="announcements"/></a></li>
+                                    <li><a href="#"><I18n i18nkey="Interview"/></a></li>
+                                    <li><a href="#" className="active"><I18n i18nkey="calendar"/> <span className="calendar active" /></a></li>
                                 </ul>
                             </div>
                             <div className="medium-block">
-
-
-                                
-                                <span className="category"><i>Политика</i></span>
+                                <span className="category"><i><I18n i18nkey="politics"/></i></span>
                                 <img src="img/center-block/obce.jpg" alt="обсе" />
                                 <div className="topic">
-                                    <h2>Делегация Казахстана выступила на сессии ПА ОБСЕ</h2>
+                                    <h2><I18n i18nkey="firstNews"/></h2>
                                     <span className="date"><i>6 июля, 2016</i></span>
                                     <span className="shared"><a href="#"><img src="img/icons/shared.png" alt="shared" /></a></span>
                                 </div>
                             </div>
                             <div className="medium-block">
-                                <span className="category"><i>Политика</i></span>
+                                <span className="category"><i><I18n i18nkey="politics"/></i></span>
                                 <img src="img/center-block/region.jpg" alt="регион" />
                                 <div className="topic">
-                                    <h2>Автопробег в Костанайской области</h2>
+                                    <h2><I18n i18nkey="secondPolitics"/></h2>
                                     <span className="date"><i>6 июля, 2016</i></span>
                                     <span className="shared"><a href="#"><img src="img/icons/shared.png" alt="shared" /></a></span>
                                 </div>
                             </div>
-                           
                             
-                            
-                           
-                            {this.render_news()} 
-                          
 
 
-                            
-                            
-                            <button className="load-more" type="button">Загрузить еще</button>
+                            {this.render_news()}
+
+
+                            <button className="load-more" type="button"><I18n i18nkey="LoadMore"/></button>
                         </div>
                         <div id="blog" className="cell-4">
                             <div className="cell-12">
@@ -172,20 +227,20 @@ export default class News extends Component {
                                     <img src="img/top-block/electron.jpg" alt="Общественная Приемная" />
                                     <div className="topic-electron">
                                         <div className="content-app">
-                                            <span>Электронная</span>
-                                            <h3><i>Общественная Приемная</i></h3>
-                                            <span>партии “Нұр Отан”</span>
+                                            <span><I18n i18nkey="electronic"/></span>
+                                            <h3><i><I18n i18nkey="publicReception"/></i></h3>
+                                            <span><I18n i18nkey="PartyNurOtan"/></span>
                                             <ul>
-                                                <li><a href="#"><img src="img/icons/edit.png" alt="edit" /> Подать обращение</a></li>
-                                                <li><a href="#"><img src="img/icons/persons.png" alt="persons" /> Записаться на прием</a></li>
-                                                <li><a href="#"><img src="img/icons/question.png" alt="question" /> Задать вопрос</a></li>
+                                                <li><a href="#"><img src="img/icons/edit.png" alt="edit" /> <I18n i18nkey="PostTreatment"/></a></li>
+                                                <li><a href="#"><img src="img/icons/persons.png" alt="persons" /> <I18n i18nkey="MakeAnAppointment"/></a></li>
+                                                <li><a href="#"><img src="img/icons/question.png" alt="question" /> <I18n i18nkey="AskAQuestion"/></a></li>
                                             </ul>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="tabs-2">
                                     <ul>
-                                        <li>Комментари</li>
+                                        <li><I18n i18nkey="COMMENTS"/></li>
                                         <li>
                     <span className="social">
                       <a href="#twitter" className="twitter" />
@@ -235,14 +290,16 @@ export default class News extends Component {
                                 </div>
                             </div>
                         </div>
+                        <div className="clearfix" />
                     </div>
-                    <div className="clearfix" />
-                    <div className="content-center">
-                        <div id="green-block">
+                    {/*End News*/}
+                    {/*Center green block*/}
+                    <div id="green-block">
+                        <div className="content-center">
                             <div id="review">
-                                <h2 className="opinion"><i>Мнения</i></h2>
+                                <h2 className="opinion"><i><I18n i18nkey="opinions"/></i></h2>
                                 <div className="yellow-block">
-                                    <p>Все мнения</p>
+                                    <p><I18n i18nkey="AllOpinions"/></p>
                                     <img src="img/icons/quick.png" alt="комментари" className="quick" />
                                     <a href="#shred"><img src="img/icons/shared-black.png" alt="поделиться" className="shared-black" /></a>
                                 </div>
@@ -277,148 +334,40 @@ export default class News extends Component {
                                     </div>
                                 </div>
                             </div>
-                            <div id="slider-center">
-                                <div className="tabs">
-                                    <ul>
-                                        <li>Проекты</li>
-                                        <li>ДИАЛОГОВЫЕ ПЛОЩАДКИ</li>
-                                    </ul>
-                                    <div>
-                                        <div className="slider-green">
-                                            <div className="owl-carousel">
-                                                <div className="item">
-                                                    <img src="img/slider/ardagerler.jpg" alt="Ардагерлер" />
-                                                    <h4>«БУДУЩЕЕ БЕЗ БАРЬЕРОВ»</h4>
-                                                </div>
-                                                <div className="item">
-                                                    <img src="img/slider/ardagerler.jpg" alt="Ардагерлер" />
-                                                    <h4>«БУДУЩЕЕ БЕЗ БАРЬЕРОВ»</h4>
-                                                </div>
-                                                <div className="item">
-                                                    <img src="img/slider/ardagerler.jpg" alt="Ардагерлер" />
-                                                    <h4>«БУДУЩЕЕ БЕЗ БАРЬЕРОВ»</h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="slider-green">
-                                            <div className="owl-carousel">
-                                                <div className="item">
-                                                    <img src="img/slider/ardagerler.jpg" alt="Ардагерлер" />
-                                                </div>
-                                                <div className="item"><img src="img/slider/ardagerler.jpg" alt="Ардагерлер" /></div>
-                                                <div className="item"><img src="img/slider/ardagerler.jpg" alt="Ардагерлер" /></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            
+                            
+                            
+                           
+                            
+                            <SliderCenter/>
+                            
+                            
+                            
+                            
                         </div>
                     </div>
-                    <div id="videos">
-                        <h2><i>Видео</i></h2>
-                        <div className="columns-video">
-                            <div className="video item">
-                                <a href="https://www.youtube.com/embed/YjUXZjTjJ9E" data-modal-title="Коротко о Плане нации - 100 конкретных шагов">
-                                    <img src="http://img.youtube.com/vi/YjUXZjTjJ9E/0.jpg" />
-                                </a>
-                                <p>Коротко о Плане нации - 100 конкретных шагов</p>
-              <span className="date">
-                <strong><i>11 июля, 2016</i></strong>
-              </span>
-              <span className="answer">
-                <strong><i>12</i></strong>
-              </span>
-                            </div>
-                            <div className="video item">
-                                <a href="https://www.youtube.com/embed/YjUXZjTjJ9E" data-modal-title="Коротко о Плане нации - 100 конкретных шагов">
-                                    <img src="http://img.youtube.com/vi/YjUXZjTjJ9E/0.jpg" />
-                                </a>
-                                <p>Коротко о Плане нации - 100 конкретных шагов</p>
-              <span className="date">
-                <strong><i>11 июля, 2016</i></strong>
-              </span>
-              <span className="answer">
-                <strong><i>12</i></strong>
-              </span>
-                            </div>
-                            <div className="video item">
-                                <a href="https://www.youtube.com/embed/YjUXZjTjJ9E" data-modal-title="Коротко о Плане нации - 100 конкретных шагов">
-                                    <img src="http://img.youtube.com/vi/YjUXZjTjJ9E/0.jpg" />
-                                </a>
-                                <p>Коротко о Плане нации - 100 конкретных шагов</p>
-              <span className="date">
-                <strong><i>11 июля, 2016</i></strong>
-              </span>
-              <span className="answer">
-                <strong><i>12</i></strong>
-              </span>
-                            </div>
-                            <div className="video item"><a href="https://www.youtube.com/embed/YjUXZjTjJ9E" data-modal-title="Коротко о Плане нации - 100 конкретных шагов">
-                                <img src="http://img.youtube.com/vi/YjUXZjTjJ9E/0.jpg" />
-                            </a>
-                                <p>Коротко о Плане нации - 100 конкретных шагов</p>
-              <span className="date">
-                <strong><i>11 июля, 2016</i></strong>
-              </span>
-              <span className="answer">
-                <strong><i>12</i></strong>
-              </span>
-                            </div>
-                            <div className="video item"><a href="https://www.youtube.com/embed/YjUXZjTjJ9E" data-modal-title="Коротко о Плане нации - 100 конкретных шагов">
-                                <img src="http://img.youtube.com/vi/YjUXZjTjJ9E/0.jpg" />
-                            </a>
-                                <p>Коротко о Плане нации - 100 конкретных шагов</p>
-              <span className="date">
-                <strong><i>11 июля, 2016</i></strong>
-              </span>
-              <span className="answer">
-                <strong><i>12</i></strong>
-              </span>
-                            </div>
-                            <div className="video item"><a href="https://www.youtube.com/embed/YjUXZjTjJ9E" data-modal-title="Коротко о Плане нации - 100 конкретных шагов">
-                                <img src="http://img.youtube.com/vi/YjUXZjTjJ9E/0.jpg" />
-                            </a>
-                                <p>Коротко о Плане нации - 100 конкретных шагов</p>
-              <span className="date">
-                <strong><i>11 июля, 2016</i></strong>
-              </span>
-              <span className="answer">
-                <strong><i>12</i></strong>
-              </span>
-                            </div>
-                            <div className="video item"><a href="https://www.youtube.com/embed/YjUXZjTjJ9E" data-modal-title="Коротко о Плане нации - 100 конкретных шагов">
-                                <img src="http://img.youtube.com/vi/YjUXZjTjJ9E/0.jpg" />
-                            </a>
-                                <p>Коротко о Плане нации - 100 конкретных шагов</p>
-              <span className="date">
-                <strong><i>11 июля, 2016</i></strong>
-              </span>
-              <span className="answer">
-                <strong><i>12</i></strong>
-              </span>
-                            </div>
-                            <div className="video item"><a href="https://www.youtube.com/embed/YjUXZjTjJ9E" data-modal-title="Коротко о Плане нации - 100 конкретных шагов">
-                                <img src="http://img.youtube.com/vi/YjUXZjTjJ9E/0.jpg" />
-                            </a>
-                                <p>Коротко о Плане нации - 100 конкретных шагов</p>
-              <span className="date">
-                <strong><i>11 июля, 2016</i></strong>
-              </span>
-              <span className="answer">
-                <strong><i>12</i></strong>
-              </span>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="blocks-bottom" className="content">
+                    {/*End Center green block*/}
+                    {/*Video*/}
+                    
+                    
+                    
+                    
+                    <SliderVideo/>
+                    
+                    
+                    
+                    
+                    
+                    {/*End video*/}
+                    {/*Photo*/}
+                    <div id="photo" className="center">
                         <h2><i>Фото</i></h2>
                         <div className="black-block">
                             <div className="cell-6 cell-medium-12 last">
                                 <div className="large-block">
                                     <img src="img/bottom-block/politic.jpg" alt="политик" />
                                     <div className="topic">
-                                        <h2>Церемония награждения лучших спортсменов по национальным видам спорта «Алтын Тұғыр -
-                                            2015»</h2>
+                                        <h2><I18n i18nkey="firstPhoto"/></h2>
                                         <a href>
                                             <img src="img/icons/instagram.png" alt="instagram" className="right" />
                                         </a>
@@ -433,7 +382,7 @@ export default class News extends Component {
                                         </div>
                                         <img src="img/bottom-block/politic-2.jpg" alt="политик" />
                                         <div className="topic">
-                                            <h2>Внеочередной Съезд партии “Нұр Отан”</h2>
+                                            <h2><I18n i18nkey="secondPhoto"/></h2>
                                         </div>
                                     </div>
                                 </div>
@@ -444,7 +393,7 @@ export default class News extends Component {
                                         </div>
                                         <img src="img/bottom-block/politic-3.jpg" alt="политик" />
                                         <div className="topic">
-                                            <h2>Казахстанцы - Герои Советского Союза</h2>
+                                            <h2><I18n i18nkey="fourthPhoto"/></h2>
                                         </div>
                                     </div>
                                 </div>
@@ -455,7 +404,7 @@ export default class News extends Component {
                                         </div>
                                         <img src="img/bottom-block/politic-4.jpg" alt="политик" />
                                         <div className="topic">
-                                            <h2>“Большая Евразия: Территория диалога молодежи”</h2>
+                                            <h2><I18n i18nkey="thirdPhoto"/></h2>
                                         </div>
                                     </div>
                                 </div>
@@ -466,7 +415,7 @@ export default class News extends Component {
                                         </div>
                                         <img src="img/bottom-block/politic-5.jpg" alt="политик" />
                                         <div className="topic">
-                                            <h2>Республиканский конкурс "Лучшая первичная партийная организация"</h2>
+                                            <h2><I18n i18nkey="fifthPhoto"/></h2>
                                         </div>
                                     </div>
                                 </div>
@@ -474,54 +423,28 @@ export default class News extends Component {
                             <div className="clearfix" />
                         </div>
                     </div>
-                    <div className="slider-bottom">
-                        <div className="item">
-                            <a href="#">www.akorda.kz</a>
-                            <span>Официальный сайт Президента РК</span>
-                        </div>
-                        <div className="item">
-                            <a href="#">www.ipp.kz</a>
-                            <span>Официальный сайт Президента РК</span>
-                        </div>
-                        <div className="item">
-                            <a href="#">www.nurmedia.kz</a>
-                            <span>Официальный сайт Президента РК</span>
-                        </div>
-                        <div className="item">
-                            <a href="#">www.zhasotan.kz</a>
-                            <span>Официальный сайт Президента РК</span>
-                        </div>
-                        <div className="item">
-                            <a href="#">www.zhasotan.kz</a>
-                            <span>Официальный сайт Президента РК</span>
-                        </div>
-                        <div className="item">
-                            <a href="#">www.akorda.kz</a>
-                            <span>Официальный сайт Президента РК</span>
-                        </div>
-                        <div className="item">
-                            <a href="#">www.akorda.kz</a>
-                            <span>Официальный сайт Президента РК</span>
-                        </div>
-                    </div>
-                    <div className="clearfix" />
+                    {/*End Photo*/}
+                    {/*Slider links*/}
+                    
+                    <SliderBottom/>
+                    
+                    
+             
+                    {/*End Slider links*/}
                 </div>
 
 
 
-
-
-
-
-
-                
             </div>
 
 
 
 
 
-        )
+
+
+
+    )
 
 
     }

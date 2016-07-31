@@ -8,6 +8,10 @@ import { TAPi18n } from 'meteor/tap:i18n';
 
 import NewsItem from './ui/NewsItem';
 import News from './ui/News';
+import VideoItem from './ui/VideoItem';
+
+
+
 const {Router, Route, IndexRoute, browserHistory} = ReactRouter;
 
 
@@ -15,7 +19,7 @@ const {Router, Route, IndexRoute, browserHistory} = ReactRouter;
 
 Meteor.startup(function() {
 
-    UPLOADCARE_PUBLIC_KEY = 'f2ffd038e7774979768e';
+
 
     TAPi18n.setLanguage('ru');
 
@@ -31,20 +35,14 @@ Meteor.startup(function() {
 
       <Router history={browserHistory}>
           <Route path="/" component={App}>
+
               <IndexRoute component={News}/>
 
 
+              <Route path="/news/:slug" component={NewsItem}/>
+              <Route path="/videos" component={VideoItem}/>
 
 
-
-                  <Route path="/:slug" component={NewsItem}/>
-
-
-
-
-
-             
-             
           </Route>
 
       </Router>
