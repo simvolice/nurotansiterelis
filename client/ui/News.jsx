@@ -16,7 +16,7 @@ import lodash from 'lodash';
 import SliderBottom from './SliderBottom';
 import SliderVideo from './SliderVideo';
 import SliderCenter from './SliderCenter';
-
+import { TAPi18n } from 'meteor/tap:i18n';
 
 Meteor.subscribe('news_records');
 
@@ -92,6 +92,9 @@ export default class News extends Component {
 
 
 
+
+
+
         lodash.reverse(this.props.news_records);
 
 
@@ -126,6 +129,15 @@ export default class News extends Component {
 
 
     render(){
+
+
+
+
+
+
+
+
+
         return(
 
 

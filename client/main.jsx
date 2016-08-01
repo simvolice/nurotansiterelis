@@ -12,6 +12,10 @@ import VideoItem from './ui/VideoItem';
 
 
 
+
+
+
+
 const {Router, Route, IndexRoute, browserHistory} = ReactRouter;
 
 
@@ -22,6 +26,7 @@ Meteor.startup(function() {
 
 
     TAPi18n.setLanguage('ru');
+
 
    
   const root = document.createElement('div');
