@@ -28,6 +28,8 @@ Meteor.startup(function() {
     TAPi18n.setLanguage('ru');
 
 
+    localStorage.setItem('lang', 'ru');
+
    
   const root = document.createElement('div');
   root.setAttribute('id', 'root');

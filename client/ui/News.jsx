@@ -48,41 +48,7 @@ export default class News extends Component {
         });
 
 
-        
 
-
-
-
-
-        jQuery.fn.lightTabs = function(options){
-
-            var createTabs = function(){
-                tabs = this;
-                i = 0;
-
-                showPage = function(i){
-                    $(tabs).children("div").children("div").hide();
-                    $(tabs).children("div").children("div").eq(i).show();
-                    $(tabs).children("ul").children("li").removeClass("active");
-                    $(tabs).children("ul").children("li").eq(i).addClass("active");
-                };
-
-                showPage(0);
-
-                $(tabs).children("ul").children("li").each(function(index, element){
-                    $(element).attr("data-page", i);
-                    i++;
-                });
-
-                $(tabs).children("ul").children("li").click(function(){
-                    showPage(parseInt($(this).attr("data-page")));
-                });
-            };
-            return this.each(createTabs);
-        };
-
-        $(".tabs").lightTabs();
-        $(".tabs-2").lightTabs();
     }
    
 
@@ -250,24 +216,18 @@ export default class News extends Component {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="tabs-2">
+                                <div className="tabs" data-tabs>
                                     <ul>
-                                        <li><I18n i18nkey="COMMENTS"/></li>
+                                        <li><a href="#"><I18n i18nkey="COMMENTS"/></a></li>
                                         <li>
-                    <span className="social">
-                      <a href="#twitter" className="twitter" />
-                    </span>
-                                            Twitter
+                                            <a href="#" className="icon twitter">Twitter</a>
                                         </li>
                                         <li>
-                    <span className="social">
-                      <a href="#facebook" className="facebook" />
-                    </span>
-                                            Facebook
+                                            <a href="#" className="icon facebook">Facebook</a>
                                         </li>
                                     </ul>
-                                    <div>
-                                        <div>
+                                    <section>
+
                                             <div className="comment">
                                                 <p>В Майском районном филиале партии обсудили вопросы медиации</p>
                       <span className="date">
@@ -286,6 +246,8 @@ export default class News extends Component {
                         <strong><i>12</i></strong>
                       </span>
                                             </div>
+
+
                                             <div className="comment">
                                                 <p>Twitter В Майском районном филиале партии обсудили вопросы медиации</p>
                       <span className="date">
@@ -294,10 +256,14 @@ export default class News extends Component {
                       <span className="answer">
                         <strong><i>12</i></strong>
                       </span>
-                                            </div>
-                                        </div>
-                                        <div><p>Twitter api</p></div>
-                                        <div><p>Facebook api</p></div>
+                                                </div>
+
+
+
+
+                                    </section>
+                                        <section><p>Twitter api</p></section>
+                                        <section><p>Facebook api</p></section>
                                     </div>
                                 </div>
                             </div>
@@ -447,7 +413,7 @@ export default class News extends Component {
 
 
 
-            </div>
+
 
 
 

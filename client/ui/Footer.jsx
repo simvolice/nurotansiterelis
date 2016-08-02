@@ -3,8 +3,8 @@ import React, {Component} from 'react';
 import I18n from 'meteor/timoruetten:react-i18n';
 import { TAPi18n } from 'meteor/tap:i18n';
 
-
 export default class Footer extends Component{
+
 
 
 
@@ -14,7 +14,13 @@ export default class Footer extends Component{
 
 
 
+
     }
+
+
+
+
+
 
 
     render(){

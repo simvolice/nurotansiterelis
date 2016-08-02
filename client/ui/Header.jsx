@@ -9,7 +9,7 @@ import moment from 'moment';
 import 'moment/locale/ru';
 import 'moment/locale/kk';
 import 'moment/locale/en-gb';
-
+import Footer from './Footer';
 
 
 moment.locale('ru');
@@ -21,6 +21,9 @@ export default class Header extends Component {
 
     constructor(props){
         super(props);
+
+
+
 
 
         this.state = {
@@ -36,6 +39,7 @@ export default class Header extends Component {
 
         this.setLang = this.setLang.bind(this);
 
+
     }
 
 
@@ -49,6 +53,9 @@ export default class Header extends Component {
 
 
         TAPi18n.setLanguage(i);
+        localStorage.setItem('lang', i);
+
+
 
         if (i === 'kz'){
 
@@ -68,6 +75,7 @@ export default class Header extends Component {
         if (i === 'ru'){
 
             this.setState({placeHolderSearch: 'Я ищу...'});
+
 
         }else if(i === 'kz'){
 
@@ -114,7 +122,7 @@ export default class Header extends Component {
             <header>
                 {/*Banner top*/}
                 <div className="banner">
-                    <img src="img/banner.jpg" alt="баннер" />
+                    <img src="img/banner2.jpg" alt="баннер" />
                 </div>
                 {/*Banner top END*/}
                 <div className="center">
