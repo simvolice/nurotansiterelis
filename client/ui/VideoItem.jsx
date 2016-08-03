@@ -55,7 +55,7 @@ export default class VideoItem extends Component{
                                 <h2><I18n i18nkey="firstNewsVideoItem"/></h2>
                                 <div>
                                     <storng className="category"><I18n i18nkey="politics"/></storng>
-                                    <span className="date-news">1 июля, 2016</span>
+                                    <span className="date-news">3 <I18n i18nkey="August"/>, 2016</span>
                                     <img src="/../img/icons/shared-grey.png" alt="shared" className="right" />
                                 </div>
                                 <div className="large-block">
@@ -87,7 +87,7 @@ export default class VideoItem extends Component{
                                         </a>
                                         <p><I18n i18nkey="steps"/></p>
                   <span className="date">
-                    <strong><i>11 июля, 2016</i></strong>
+                    <strong><i>3 <I18n i18nkey="August"/>, 2016</i></strong>
                   </span>
                   <span className="answer">
                     <strong><i>12</i></strong>
@@ -99,7 +99,7 @@ export default class VideoItem extends Component{
                                         </a>
                                         <p><I18n i18nkey="steps"/></p>
                   <span className="date">
-                    <strong><i>11 июля, 2016</i></strong>
+                    <strong><i>3 <I18n i18nkey="August"/>, 2016</i></strong>
                   </span>
                   <span className="answer">
                     <strong><i>12</i></strong>
@@ -125,7 +125,7 @@ export default class VideoItem extends Component{
                                     </a>
                                     <p><I18n i18nkey="steps"/></p>
                 <span className="date">
-                  <strong><i>11 июля, 2016</i></strong>
+                  <strong><i>3 <I18n i18nkey="August"/>, 2016</i></strong>
                 </span>
                 <span className="answer">
                   <strong><i>12</i></strong>
@@ -139,7 +139,7 @@ export default class VideoItem extends Component{
                                     </a>
                                     <p><I18n i18nkey="steps"/></p>
                 <span className="date">
-                  <strong><i>11 июля, 2016</i></strong>
+                  <strong><i>3 <I18n i18nkey="August"/>, 2016</i></strong>
                 </span>
                 <span className="answer">
                   <strong><i>12</i></strong>
@@ -153,7 +153,7 @@ export default class VideoItem extends Component{
                                     </a>
                                     <p><I18n i18nkey="steps"/></p>
                 <span className="date">
-                  <strong><i>11 июля, 2016</i></strong>
+                  <strong><i>3 <I18n i18nkey="August"/>, 2016</i></strong>
                 </span>
                 <span className="answer">
                   <strong><i>12</i></strong>
@@ -167,7 +167,7 @@ export default class VideoItem extends Component{
                                     </a>
                                     <p><I18n i18nkey="steps"/></p>
                 <span className="date">
-                  <strong><i>11 июля, 2016</i></strong>
+                  <strong><i>3 <I18n i18nkey="August"/>, 2016</i></strong>
                 </span>
                 <span className="answer">
                   <strong><i>12</i></strong>

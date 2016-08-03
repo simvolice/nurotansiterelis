@@ -30,11 +30,10 @@ export default class News extends Component {
 
      
 
-
-
-
-
     }
+
+
+
 
 
 
@@ -61,6 +60,9 @@ export default class News extends Component {
 
 
 
+
+
+
         lodash.reverse(this.props.news_records);
 
 
@@ -72,7 +74,11 @@ export default class News extends Component {
             newArr.map((news , i) => (
 
 
+
+
                 <div className="news-block" key={i}>
+
+
                     <div className="line">
                         <img src={news.urlImage} alt="новость" className="img-news" />
                         <div className="topic">

@@ -19,22 +19,6 @@ export default class NewsItem extends Component {
 
 
 
- 
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -147,7 +131,7 @@ export default class NewsItem extends Component {
                                        <img src="../img/center-block/region.jpg" alt="регион" />
                                        <div className="topic">
                                            <h2><I18n i18nkey="secondPolitics"/></h2>
-                                           <span className="date"><i>6 июля, 2016</i></span>
+                                           <span className="date"><i>3 <I18n i18nkey="August"/>, 2016</i></span>
                                        </div>
                                    </div>
                                    <div className="medium-block">
@@ -155,7 +139,7 @@ export default class NewsItem extends Component {
                                        <img src="../img/center-block/region.jpg" alt="регион" />
                                        <div className="topic">
                                            <h2><I18n i18nkey="secondPolitics"/></h2>
-                                           <span className="date"><i>6 июля, 2016</i></span>
+                                           <span className="date"><i>3 <I18n i18nkey="August"/>, 2016</i></span>
                                        </div>
                                    </div>
                                    <div className="medium-block-2">
@@ -194,49 +178,49 @@ export default class NewsItem extends Component {
                        <div className="blog-description-news">
                            <div className="mini-news cell-3">
                                <storng className="category"><I18n i18nkey="politics"/></storng>
-                               <span className="date-news">1 июля, 2016</span>
+                               <span className="date-news">3 <I18n i18nkey="August"/>, 2016</span>
                                <p><I18n i18nkey="cloneNewsItem"/></p>
                                <a href="#" className="shared"><img src="../img/icons/shared-grey.png" alt="shared" /></a>
                            </div>
                            <div className="mini-news cell-3">
                                <storng className="category"><I18n i18nkey="politics"/></storng>
-                               <span className="date-news">1 июля, 2016</span>
+                               <span className="date-news">3 <I18n i18nkey="August"/>, 2016</span>
                                <p><I18n i18nkey="cloneNewsItem"/></p>
                                <a href="#" className="shared"><img src="../img/icons/shared-grey.png" alt="shared" /></a>
                            </div>
                            <div className="mini-news cell-3">
                                <storng className="category"><I18n i18nkey="politics"/></storng>
-                               <span className="date-news">1 июля, 2016</span>
+                               <span className="date-news">3 <I18n i18nkey="August"/>, 2016</span>
                                <p><I18n i18nkey="cloneNewsItem"/></p>
                                <a href="#" className="shared"><img src="../img/icons/shared-grey.png" alt="shared" /></a>
                            </div>
                            <div className="mini-news cell-3">
                                <storng className="category"><I18n i18nkey="politics"/></storng>
-                               <span className="date-news">1 июля, 2016</span>
+                               <span className="date-news">3 <I18n i18nkey="August"/>, 2016</span>
                                <p><I18n i18nkey="cloneNewsItem"/></p>
                                <a href="#" className="shared"><img src="../img/icons/shared-grey.png" alt="shared" /></a>
                            </div>
                            <div className="mini-news cell-3">
                                <storng className="category"><I18n i18nkey="politics"/></storng>
-                               <span className="date-news">1 июля, 2016</span>
+                               <span className="date-news">3 <I18n i18nkey="August"/>, 2016</span>
                                <p><I18n i18nkey="cloneNewsItem"/></p>
                                <a href="#" className="shared"><img src="../img/icons/shared-grey.png" alt="shared" /></a>
                            </div>
                            <div className="mini-news cell-3">
                                <storng className="category"><I18n i18nkey="politics"/></storng>
-                               <span className="date-news">1 июля, 2016</span>
+                               <span className="date-news">3 <I18n i18nkey="August"/>, 2016</span>
                                <p><I18n i18nkey="cloneNewsItem"/></p>
                                <a href="#" className="shared"><img src="../img/icons/shared-grey.png" alt="shared" /></a>
                            </div>
                            <div className="mini-news cell-3">
                                <storng className="category"><I18n i18nkey="politics"/></storng>
-                               <span className="date-news">1 июля, 2016</span>
+                               <span className="date-news">3 <I18n i18nkey="August"/>, 2016</span>
                                <p><I18n i18nkey="cloneNewsItem"/></p>
                                <a href="#" className="shared"><img src="../img/icons/shared-grey.png" alt="shared" /></a>
                            </div>
                            <div className="mini-news cell-3">
                                <storng className="category"><I18n i18nkey="politics"/></storng>
-                               <span className="date-news">1 июля, 2016</span>
+                               <span className="date-news">3 <I18n i18nkey="August"/>, 2016</span>
                                <p><I18n i18nkey="cloneNewsItem"/></p>
                                <a href="#" className="shared"><img src="../img/icons/shared-grey.png" alt="shared" /></a>
                            </div>
