@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import '../js/owl.carousel.min.js';
 import {Link, IndexLink} from 'react-router';
 import I18n from 'meteor/timoruetten:react-i18n';
-
+import moment from 'moment';
 
 export default class SliderVideo extends Component{
     
@@ -44,7 +44,7 @@ export default class SliderVideo extends Component{
                         </a>
                         <p><I18n i18nkey="steps"/></p>
               <span className="date">
-                <strong><i>11 июля, 2016</i></strong>
+                <strong><i>3 <I18n i18nkey="August"/>, 2016</i></strong>
               </span>
               <span className="answer">
                 <strong><i>12</i></strong>
@@ -56,7 +56,7 @@ export default class SliderVideo extends Component{
                         </a>
                         <p><I18n i18nkey="steps"/></p>
               <span className="date">
-                <strong><i>11 июля, 2016</i></strong>
+                <strong><i>3 <I18n i18nkey="August"/>, 2016</i></strong>
               </span>
               <span className="answer">
                 <strong><i>12</i></strong>
@@ -68,7 +68,7 @@ export default class SliderVideo extends Component{
                         </a>
                         <p><I18n i18nkey="steps"/></p>
               <span className="date">
-                <strong><i>11 июля, 2016</i></strong>
+                <strong><i>3 <I18n i18nkey="August"/>, 2016</i></strong>
               </span>
               <span className="answer">
                 <strong><i>12</i></strong>
@@ -79,7 +79,7 @@ export default class SliderVideo extends Component{
                     </a>
                         <p><I18n i18nkey="steps"/></p>
               <span className="date">
-                <strong><i>11 июля, 2016</i></strong>
+                <strong><i>3 <I18n i18nkey="August"/>, 2016</i></strong>
               </span>
               <span className="answer">
                 <strong><i>12</i></strong>
@@ -90,7 +90,7 @@ export default class SliderVideo extends Component{
                     </a>
                         <p><I18n i18nkey="steps"/></p>
               <span className="date">
-                <strong><i>11 июля, 2016</i></strong>
+                <strong><i>3 <I18n i18nkey="August"/>, 2016</i></strong>
               </span>
               <span className="answer">
                 <strong><i>12</i></strong>
@@ -101,7 +101,7 @@ export default class SliderVideo extends Component{
                     </a>
                         <p><I18n i18nkey="steps"/></p>
               <span className="date">
-                <strong><i>11 июля, 2016</i></strong>
+                <strong><i>3 <I18n i18nkey="August"/>, 2016</i></strong>
               </span>
               <span className="answer">
                 <strong><i>12</i></strong>
@@ -112,7 +112,7 @@ export default class SliderVideo extends Component{
                     </a>
                         <p><I18n i18nkey="steps"/></p>
               <span className="date">
-                <strong><i>11 июля, 2016</i></strong>
+                <strong><i>3 <I18n i18nkey="August"/>, 2016</i></strong>
               </span>
               <span className="answer">
                 <strong><i>12</i></strong>
@@ -123,7 +123,7 @@ export default class SliderVideo extends Component{
                     </a>
                         <p><I18n i18nkey="steps"/></p>
               <span className="date">
-                <strong><i>11 июля, 2016</i></strong>
+                <strong><i>3 <I18n i18nkey="August"/>, 2016</i></strong>
               </span>
               <span className="answer">
                 <strong><i>12</i></strong>

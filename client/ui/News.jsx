@@ -17,7 +17,7 @@ import SliderBottom from './SliderBottom';
 import SliderVideo from './SliderVideo';
 import SliderCenter from './SliderCenter';
 import { TAPi18n } from 'meteor/tap:i18n';
-
+import moment from 'moment';
 Meteor.subscribe('news_records');
 
 
@@ -119,7 +119,7 @@ export default class News extends Component {
                                 <img src="img/top-block/conference.jpg" alt="конференция" />
                                 <div className="topic">
                                     <h2><I18n i18nkey="firstPolitics"/></h2>
-                                    <span className="date"><i>6 июля, 2016</i></span>
+                                    <span className="date"><i>3 <I18n i18nkey="August"/>, 2016</i></span>
                                 </div>
                             </div>
                         </div>
@@ -130,7 +130,7 @@ export default class News extends Component {
                                     <img src="img/top-block/floar.jpg" alt="конференция" />
                                     <div className="topic">
                                         <h2><I18n i18nkey="secondPolitics"/></h2>
-                                        <span className="date"><i>6 июля, 2016</i></span>
+                                        <span className="date"><i>3 <I18n i18nkey="August"/>, 2016</i></span>
                                     </div>
                                 </div>
                             </div>
@@ -145,7 +145,7 @@ export default class News extends Component {
                                     <img src="img/top-block/politic.jpg" alt="политика" />
                                     <div className="topic">
                                         <h2><I18n i18nkey="firstSport"/></h2>
-                                        <span className="date"><i>6 июля, 2016</i></span>
+                                        <span className="date"><i>3 <I18n i18nkey="August"/>, 2016</i></span>
                                     </div>
                                 </div>
                             </div>
@@ -177,7 +177,7 @@ export default class News extends Component {
                                 <img src="img/center-block/obce.jpg" alt="обсе" />
                                 <div className="topic">
                                     <h2><I18n i18nkey="firstNews"/></h2>
-                                    <span className="date"><i>6 июля, 2016</i></span>
+                                    <span className="date"><i>3 <I18n i18nkey="August"/>, 2016</i></span>
                                     <span className="shared"><a href="#"><img src="img/icons/shared.png" alt="shared" /></a></span>
                                 </div>
                             </div>
@@ -186,7 +186,7 @@ export default class News extends Component {
                                 <img src="img/center-block/region.jpg" alt="регион" />
                                 <div className="topic">
                                     <h2><I18n i18nkey="secondPolitics"/></h2>
-                                    <span className="date"><i>6 июля, 2016</i></span>
+                                    <span className="date"><i>3 <I18n i18nkey="August"/>, 2016</i></span>
                                     <span className="shared"><a href="#"><img src="img/icons/shared.png" alt="shared" /></a></span>
                                 </div>
                             </div>
@@ -285,9 +285,9 @@ export default class News extends Component {
                                     <div className="person">
                                         <img src="img/person/person-1.jpg" alt="person" />
                                         <div className="description">
-                                            <span>Вице-министр здравоохранения и социального развития РК</span>
-                                            <h2>Светлана Жакупова</h2>
-                                            <p>О внедрении адресной социальной помощи нового формата</p>
+                                            <span><I18n i18nkey="FirstOpinTitle"/></span>
+                                            <h2><I18n i18nkey="FirstOpinName"/></h2>
+                                            <p><I18n i18nkey="FirstOpinText"/></p>
                                         </div>
                                     </div>
                                 </div>
@@ -295,9 +295,9 @@ export default class News extends Component {
                                     <div className="person">
                                         <img src="img/person/person-2.jpg" alt="person" />
                                         <div className="description">
-                                            <span>Член Фракции партии «Нұр Отан» в Мажилисе Парламента</span>
-                                            <h2>Нуртай Сабильянов</h2>
-                                            <p>О внедрении налогового декларирования доходов и расходов</p>
+                                            <span><I18n i18nkey="SecondOpinTitle"/></span>
+                                            <h2><I18n i18nkey="SecondOpinName"/></h2>
+                                            <p><I18n i18nkey="SecondOpinText"/></p>
                                         </div>
                                     </div>
                                 </div>
@@ -305,9 +305,9 @@ export default class News extends Component {
                                     <div className="person">
                                         <img src="img/person/person-3.jpg" alt="person" />
                                         <div className="description">
-                                            <span>Член совета Ассамблеи народа Казахстана</span>
-                                            <h2>Анатолий Башмаков</h2>
-                                            <p>Манифест «Мир. XXI век» носит политический характер</p>
+                                            <span><I18n i18nkey="ThirdOpinTitle"/></span>
+                                            <h2><I18n i18nkey="ThirdOpinName"/></h2>
+                                            <p><I18n i18nkey="ThirdOpinText"/></p>
                                         </div>
                                     </div>
                                 </div>
@@ -339,7 +339,7 @@ export default class News extends Component {
                     {/*End video*/}
                     {/*Photo*/}
                     <div id="photo" className="center">
-                        <h2><i>Фото</i></h2>
+                        <h2><i><I18n i18nkey="photo"/></i></h2>
                         <div className="black-block">
                             <div className="cell-6 cell-medium-12 last">
                                 <div className="large-block">
